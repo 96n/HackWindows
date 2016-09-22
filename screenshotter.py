@@ -5,7 +5,11 @@ import win32ui
 import win32con
 import win32api
 
+<<<<<<< HEAD
 hdesktop = win32gui.GetDesktopWindow()
+=======
+hdesktop = win32gui.GetDesktopWidnow()
+>>>>>>> f207d84b95b7c02b842c2d2038c634bdadb0adca
 
 width    = win32api.GetSystemMetrics(win32con.SM_CXVIRTUALSCREEN)
 height   = win32api.GetSystemMetrics(win32con.SM_CYVIRTUALSCREEN)
