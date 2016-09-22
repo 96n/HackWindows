@@ -1,11 +1,11 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 
 import win32gui
 import win32ui
 import win32con
 import win32api
 
-hdesktop = win32gui.GetDesktopWidnow()
+hdesktop = win32gui.GetDesktopWindow()
 
 width    = win32api.GetSystemMetrics(win32con.SM_CXVIRTUALSCREEN)
 height   = win32api.GetSystemMetrics(win32con.SM_CYVIRTUALSCREEN)
@@ -23,8 +23,8 @@ mem_dc.SelectObject(screenshot)
 
 mem_dc.BitBlt((0,0), (width, height), img_dc, (left, top), win32con.SRCCOPY)
 
-screenshot.SaveBitmapFile(mem_dc, 'C:\\Users\\takeo\\Pictures\\screenshot.bmp')
+screenshot.SaveBitmapFile(mem_dc, "C:\\Users\\takeo\\Pictures\\screenshot.bmp")
 
 mem_dc.DeleteDC()
-win32gui.DeleteDC(screenshot.GetHandle())
+win32gui.DeleteObject(screenshot.GetHandle())
 
